@@ -15,13 +15,13 @@ Original scripts can be found here: https://steamcommunity.com/sharedfiles/filed
 
 The script places random ToXic field missions on any map with soldiers & anomoly creatures protecting a loot crate. The three creatures are Farty, Sparky & the Screamer. It is very easy to install.
 
-Farty is a smelly green slug creature that appears from the ground to spit tooxic goo on it's enemies.
+**Farty** is a smelly green slug creature that appears from the ground to spit tooxic goo on it's enemies.
 https://goo.gl/FSK7WV
 
-Sparky is at every mission protecting the loot crate. It cretes electircal shock waves when someone comes to collect the reward.
+**Sparky** is at every mission protecting the loot crate. It cretes electircal shock waves when someone comes to collect the reward.
 https://goo.gl/zmJrnL
 
-The Screamer is an anicient statue that screams sonic waves at it's enemies. 
+**The Screamer** is an anicient statue that screams sonic waves at it's enemies. 
 https://goo.gl/Pw6KuQ
 
 The soldiers guarding the mission include up to 4 guards, two static guns and an armed vehicle. The loot in the crate includes a variety of Exile items plus $500 to $20000 poptabs.
@@ -46,12 +46,13 @@ class CfgSounds
 };
 ```
 (If you already have a class CfgSounds just add in the line: #include "sound\sounds.hpp")
+
 3. Repack your mission file & that bit is done.
 
 a3_exile_occupation - 
 1. Open @ExileServer\addons\a3_exile_occupation\config.sqf and set lootcrates to "true":
 ```
-SC_occupyLootCrates		    	= true;						// true if you want to have random loot crates with guards
+SC_occupyLootCrates = true;  // true if you want to have random loot crates with guards
 ```
 Now find & change the following:
 ```
