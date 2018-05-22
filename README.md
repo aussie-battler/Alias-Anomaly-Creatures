@@ -90,9 +90,19 @@ SC_LootCrateItems           	= [
 				    ["Exile_Item_MetalScrews",0,5]
                             ];        
 ```			    
-2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, startOccupation.sqf into your @ExileS    \addons\a3_exile_occupation\scripts      
+2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, startOccupation.sqf 
+   into your @ExileServer\addons\a3_exile_occupation\scripts folder.
+   
 **JOB DONE, sit back and have a beer.**
 
-
-
-
+**Optional Mods**
++ Change the soldier's unioform in occupationFarty.sqf & occupationScreamer.sqf
++ Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf & occupationScreamer.sqf
++ Change the loot $$cash$$ amount search for:
+```
+_box setVariable ["ExileMoney", (5000 + round (random (20000))),true];//Adds between $5K to $20K in poptabs to the loot crate
+```
+in occupationFarty.sqf & occupationScreamer.sqf
+**Known issues that I would love to fix:**
++ The ToXic field doesn't give you damage. It is surpose to make you take damage unless you wear a protective item. 
++ Sparky doesn't give you damage either, you are suppose to waer a protective device to not take damage.
