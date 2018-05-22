@@ -129,4 +129,6 @@ in occupationFarty.sqf & occupationScreamer.sqf
 
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
 ![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
-![Farty](https://media.discordapp.net/attachments/281649762934194187/448403439882469386/20180519232015_1.jpg)
+![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282315182085/20180519222528_1.jpg)
+![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282356862977/20180519231141_1.jpg)
+
