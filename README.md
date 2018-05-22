@@ -6,7 +6,7 @@ modifed for Arma3 Exile by aussie.
 If you like this script please support Alias:
 Become a Patron https://www.patreon.com/aliascartoons
 
-Donate a dollar or two https://goo.gl/vTRJru 
+Donate a dollar or two https://goo.gl/ySqv9q  
 
 Original scripts can be found here: https://steamcommunity.com/sharedfiles/filedetails/?id=1123074587
 
