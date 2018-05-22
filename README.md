@@ -10,7 +10,7 @@ Donate a dollar or two to keep more mods coming https://goo.gl/ySqv9q
 
 Original scripts can be found here: https://steamcommunity.com/sharedfiles/filedetails/?id=1123074587
 
-Shout out to @kuplion who gave me the idea to add random objects into Occupation Loot crates.<br />
+Shout out to @kuplion who gave me the idea to add random objects & smoke into these missions.<br />
 ![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282315182085/20180519222528_1.jpg)
 **About this script:**
 
@@ -118,7 +118,8 @@ SC_LootCrateItems           	= [
 					"B_Carryall_ghex_F"  //backpack
 				];
 ```
-+ Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf & occupationScreamer.sqf
++ Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf & occupationScreamer.sqf  
++ Harvest the weed adding this cool script by @GolovaRaoul http://www.exilemod.com/topic/24426-harvest-weed/
 + Change the loot $$cash$$ amount search for:
 ```
 _box setVariable ["ExileMoney", (5000 + round (random (20000))),true];//Adds between $5K to $20K in poptabs to the loot crate
