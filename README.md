@@ -10,6 +10,7 @@ Donate a dollar or two to keep more mods coming https://goo.gl/ySqv9q
 
 Original scripts can be found here: https://steamcommunity.com/sharedfiles/filedetails/?id=1123074587
 
+Shout out to @kuplion who gave me the idea to add random objects into Occupation Loot crates.<br />
 
 **About this script:**
 
