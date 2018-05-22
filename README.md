@@ -127,7 +127,7 @@ in occupationFarty.sqf & occupationScreamer.sqf
 **Known issues that I would love to fix:**
 + The ToXic field doesn't give you damage. It is suppose to make you take damage unless you wear a protective item. 
 + Sparky doesn't give you damage either, you are suppose to wear a protective device to not take damage.
-+ Farty disapears & reappears according to the map marker. For this reason I won't make the mapmarker dissapear when players get close to the mission. The mission was getting exploited on our servers with players running in to the loot crate, causing Farty to vanish.
++ Farty disappears & reappears according to the map marker. It is for this reason I won't make the mapmarker disappear when players get close to the mission. The mission was getting exploited on our servers with players running in to the loot crate, causing Farty to vanish.
 
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
 ![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
