@@ -3,8 +3,8 @@
 //		Exile Occupation by second_coming
 //		http://www.exilemod.com/profile/60-second_coming/
 //
-//      For support, visit:
-//      http://www.exilemod.com/topic/12517-release-exile-occupation-roaming-ai-more/
+//              For support, visit:
+//              http://www.exilemod.com/topic/12517-release-exile-occupation-roaming-ai-more/
 //
 //		This script uses the fantastic DMS by Defent and eraser1:
 //		http://www.exilemod.com/topic/61-dms-defents-mission-system/
@@ -65,12 +65,12 @@ SC_LootCrateItems           	= [
                                     ["Exile_Item_WoodFloorPortKit",0,2],   
                                     ["Exile_Item_Laptop",0,1],
                                     ["Exile_Item_CodeLock",0,1],
-									["Exile_Item_Cement",2,10],
-									["Exile_Item_Sand",2,10],
-									["Exile_Item_MetalWire",1,5],
-									["Exile_Item_WaterCanisterEmpty",0,2],
-									["Exile_Item_Shovel",0,1],
-									["Exile_Item_SafeKit",1,2],
-									["H_PilotHelmetFighter_O",0,1],						  
-									["Exile_Item_MetalScrews",0,5]
+				    ["Exile_Item_Cement",2,10],
+				    ["Exile_Item_Sand",2,10],
+				    ["Exile_Item_MetalWire",1,5],
+				    ["Exile_Item_WaterCanisterEmpty",0,2],
+				    ["Exile_Item_Shovel",0,1],
+				    ["Exile_Item_SafeKit",1,2],
+				    ["H_PilotHelmetFighter_O",0,1],						  
+				    ["Exile_Item_MetalScrews",0,5]
                             ];
