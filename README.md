@@ -53,11 +53,11 @@ SC_occupyLootCrates		    	= true;						// true if you want to have random loot c
 ```
 Now find & change the following:
 ```
-SC_SpawnLootCrateGuards			= true;						// true if you want to enable AI guards
-SC_numberofLootCrates       	= 2;                    	// if SC_occupyLootCrates = true spawn this many loot crates (overrided below for Namalsk)
-SC_LootCrateGuards          	= 4;                    	// number of AI to spawn at each crate
-SC_LootCrateGuardsRandomize 	= true;                 	// Use a random number of guards up to a maximum = SC_LootCrateGuards (so between 1 and SC_LootCrateGuards)
-SC_occupyLootCratesMarkers		= true;						// true if you want to have markers on the loot crate spawns
+SC_SpawnLootCrateGuards	= true;	// true if you want to enable AI guards
+SC_numberofLootCrates = 2; 	// if SC_occupyLootCrates = true spawn this many loot crates (overrided below for Namalsk)
+SC_LootCrateGuards = 4;      	// number of AI to spawn at each crate
+SC_LootCrateGuardsRandomize = true; // Use a random number of guards up to a maximum = SC_LootCrateGuards (1 to 4 Guards)
+SC_occupyLootCratesMarkers = true; // true if you want to have markers on the loot crate spawns
 ```
 Change the loot gear by searching for SC_LootCrateItems, here is mine:
 ```
