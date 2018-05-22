@@ -80,20 +80,17 @@ SC_LootCrateItems           	= [
                                     ["Exile_Item_WoodFloorPortKit",0,2],   
                                     ["Exile_Item_Laptop",0,1],
                                     ["Exile_Item_CodeLock",0,1],
-									                  ["Exile_Item_Cement",2,10],
-									                  ["Exile_Item_Sand",2,10],
-									                  ["Exile_Item_MetalWire",1,5],
-									                  ["Exile_Item_WaterCanisterEmpty",0,2],
-									                  ["Exile_Item_Shovel",0,1],
-							                      ["Exile_Item_SafeKit",1,2],
-									                  ["H_PilotHelmetFighter_O",0,1],						  
-									                  ["Exile_Item_MetalScrews",0,5]
-                                    ];
-
-```
-
-2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, startOccupation.sqf into your @ExileServer\addons\a3_exile_occupation\scripts
-
+				    ["Exile_Item_Cement",2,10],
+				    ["Exile_Item_Sand",2,10],
+				    ["Exile_Item_MetalWire",1,5],
+      				    ["Exile_Item_WaterCanisterEmpty",0,2],
+				    ["Exile_Item_Shovel",0,1],
+				    ["Exile_Item_SafeKit",1,2],
+				    ["H_PilotHelmetFighter_O",0,1],						  
+				    ["Exile_Item_MetalScrews",0,5]
+                            ];        
+```			    
+2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, startOccupation.sqf into your @ExileS    \addons\a3_exile_occupation\scripts      
 **JOB DONE, sit back and have a beer.**
 
 
