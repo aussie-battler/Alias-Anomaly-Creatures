@@ -17,8 +17,10 @@ The script places random ToXic field missions on any map with soldiers & anomoly
 
 Farty is a smelly green slug creature that appears from the ground to spit tooxic goo on it's enemies.
 https://goo.gl/FSK7WV
+
 Sparky is at every mission protecting the loot crate. It cretes electircal shock waves when someone comes to collect the reward.
 https://goo.gl/zmJrnL
+
 The Screamer is an anicient statue that screams sonic waves at it's enemies. 
 https://goo.gl/Pw6KuQ
 
