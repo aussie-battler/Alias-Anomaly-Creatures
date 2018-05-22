@@ -14,7 +14,7 @@ Shout out to @kuplion who gave me the idea to add random objects & smoke into th
 ![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282315182085/20180519222528_1.jpg)
 **About this script:**
 
-The script places random ToXic field missions on any map with soldiers & anomaly creatures protecting a loot crate. The three creatures are Farty, Sparky & the Screamer. It is very easy to install.
+The script places random ToXic field missions on any map with soldiers & anomaly creatures protecting a loot crate. The three creatures are Farty, Sparky & the Screamer. All creatures can be destroyed with explosives, under-barrel launchers or grenades. It is very easy to install.
 
 **Farty** is a smelly green slug creature that appears from the ground to spit toXic goo on it's enemies.
 https://goo.gl/FSK7WV
