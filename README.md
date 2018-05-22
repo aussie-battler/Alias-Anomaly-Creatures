@@ -100,6 +100,22 @@ SC_LootCrateItems           	= [
 
 **Optional Mods**
 + Change the soldier's unioform in occupationFarty.sqf & occupationScreamer.sqf
+```
+					_customGearSet =
+				[
+					"srifle_DMR_05_blk_F",
+					["muzzle_snds_93mmg","optic_AMS","bipod_01_F_blk"],
+					[["10Rnd_93x64_DMR_05_Mag",6],["Titan_AT",2]],          
+					"",
+					[""],
+					["Rangefinder","ItemGPS"],
+					"launch_O_Titan_short_ghex_F",
+					"H_PilotHelmetFighter_B",  //helmet
+					"U_I_Protagonist_VR",   //the ai uniform
+					"V_PlateCarrierIAGL_dgtl", //vest
+					"B_Carryall_ghex_F"  //backpack
+				];
+```
 + Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf & occupationScreamer.sqf
 + Change the loot $$cash$$ amount search for:
 ```
