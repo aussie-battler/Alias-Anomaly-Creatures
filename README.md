@@ -125,3 +125,7 @@ in occupationFarty.sqf & occupationScreamer.sqf
 **Known issues that I would love to fix:**
 + The ToXic field doesn't give you damage. It is surpose to make you take damage unless you wear a protective item. 
 + Sparky doesn't give you damage either, you are suppose to waer a protective device to not take damage.
+
+![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
+![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
+![Farty](https://media.discordapp.net/attachments/288089861955518465/447629634234875905/20180519231907_1.jpg)
