@@ -27,17 +27,17 @@ https://goo.gl/Pw6KuQ
 The soldiers guarding the mission include up to 4 guards, two static guns and an armed vehicle. The loot in the crate includes a variety of Exile items plus $500 to $20000 poptabs.
 
 **Requirements**
-You must have Exile, Dms & Occupation installed for this to work.
-Exile http://www.exilemod.com/downloads/
-Exile Dms mission System by @Defent: https://goo.gl/R8xjns
-Exile Occupation by @second_coming: https://goo.gl/YJjKjW
-Edit files with https://notepad-plus-plus.org/download/v7.5.6.html
+You must have Exile, Dms & Occupation installed for this to work.<br />
+Exile http://www.exilemod.com/downloads/<br />
+Exile Dms mission System by @Defent: https://goo.gl/R8xjns<br />
+Exile Occupation by @second_coming: https://goo.gl/YJjKjW<br />
+Edit files with https://notepad-plus-plus.org/download/v7.5.6.html<br />
 
 
 **Install**
 
-Exile mission file - 
-1. Unpack your mission file and drop the folders Al_Farty, Al_screamer, Al_spark & sound in your mission default directory.
+Exile mission file - <br />
+1. Unpack your mission file and drop the folders Al_Farty, Al_screamer, Al_spark & sound in your mission default directory.<br />
 2. Edit your description.ext and and add the following:
 ```
 class CfgSounds
