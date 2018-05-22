@@ -101,7 +101,7 @@ SC_LootCrateItems           	= [
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **Optional Mods**
-+ Change the soldier's unioform in occupationFarty.sqf & occupationScreamer.sqf
++ Change the soldier's uniform in occupationFarty.sqf & occupationScreamer.sqf
 ```
 					_customGearSet =
 				[
