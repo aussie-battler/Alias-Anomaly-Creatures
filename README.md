@@ -131,7 +131,8 @@ in occupationFarty.sqf & occupationScreamer.sqf
 + Sparky doesn't give you damage either, you are suppose to wear a protective device to not take damage.
 + Farty disappears & reappears according to the map marker. It is for this reason I won't make the mapmarker disappear when players get close to the mission. The mission was getting exploited on our servers with players running in to the loot crate, causing Farty to vanish. Maybe Farty can be reprogrammed to appear on "_postion" instead of the map marker?  
 
-Need HELP? Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-creatures-pack-by-alias/#comment-192572
+Need HELP?   
+Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-creatures-pack-by-alias/#comment-192572
 
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
 ![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
