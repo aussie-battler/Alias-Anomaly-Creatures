@@ -97,7 +97,7 @@ SC_LootCrateItems           	= [
    into your @ExileServer\addons\a3_exile_occupation\scripts folder.
    
 **JOB DONE, sit back and have a beer.**
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **Optional Mods**
 + Change the soldier's unioform in occupationFarty.sqf & occupationScreamer.sqf
