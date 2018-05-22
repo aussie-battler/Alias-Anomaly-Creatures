@@ -1,27 +1,27 @@
 # Alias-Anomaly-Creatures
-**Arma3 Exile Anomoly Pack by Alias**
+**Arma3 Exile Anomaly Pack by Alias**
 
-modifed for Arma3 Exile by aussie.
+modified for Arma3 Exile by aussie.
 
 If you like this script please support Alias:
 Become a Patron https://www.patreon.com/aliascartoons
 
-Donate a dollar or two https://goo.gl/ySqv9q  
+Donate a dollar or two to keep more mods coming https://goo.gl/ySqv9q  
 
 Original scripts can be found here: https://steamcommunity.com/sharedfiles/filedetails/?id=1123074587
 
 
 **About this script:**
 
-The script places random ToXic field missions on any map with soldiers & anomoly creatures protecting a loot crate. The three creatures are Farty, Sparky & the Screamer. It is very easy to install.
+The script places random ToXic field missions on any map with soldiers & anomaly creatures protecting a loot crate. The three creatures are Farty, Sparky & the Screamer. It is very easy to install.
 
-**Farty** is a smelly green slug creature that appears from the ground to spit tooxic goo on it's enemies.
+**Farty** is a smelly green slug creature that appears from the ground to spit toXic goo on it's enemies.
 https://goo.gl/FSK7WV
 
-**Sparky** is at every mission protecting the loot crate. It cretes electircal shock waves when someone comes to collect the reward.
+**Sparky** is at every mission protecting the loot crate. It creates electrical shock waves when someone comes to collect the reward.
 https://goo.gl/zmJrnL
 
-**The Screamer** is an anicient statue that screams sonic waves at it's enemies. 
+**The Screamer** is an ancient statue that screams sonic waves at it's enemies. 
 https://goo.gl/Pw6KuQ
 
 The soldiers guarding the mission include up to 4 guards, two static guns and an armed vehicle. The loot in the crate includes a variety of Exile items plus $500 to $20000 poptabs.
@@ -124,8 +124,8 @@ _box setVariable ["ExileMoney", (5000 + round (random (20000))),true];//Adds bet
 in occupationFarty.sqf & occupationScreamer.sqf
 
 **Known issues that I would love to fix:**
-+ The ToXic field doesn't give you damage. It is surpose to make you take damage unless you wear a protective item. 
-+ Sparky doesn't give you damage either, you are suppose to waer a protective device to not take damage.
++ The ToXic field doesn't give you damage. It is suppose to make you take damage unless you wear a protective item. 
++ Sparky doesn't give you damage either, you are suppose to wear a protective device to not take damage.
 
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
 ![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
