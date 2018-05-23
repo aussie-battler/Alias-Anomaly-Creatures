@@ -1,6 +1,6 @@
 // by ALIAS
 // null=["marker"] execvm "AL_screamer\screamer.sqf"
-	private ["_poz"];
+
 fnc_avoid_screamer ={
 	private ["_danger_close","_op_dir","_chased_units","_fct","_reldir","_avoid_poz"];
 	_danger_close = _this select 0;
