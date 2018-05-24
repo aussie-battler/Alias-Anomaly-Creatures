@@ -131,7 +131,8 @@ if ((count _list_units_in_range>0) and ((player distance _obiect_orb)< 200)) the
 	else
 		{
 		nul=[_voice_orb,_voice_orb] execVM "AL_spark\al_spark_attack.sqf";
-		[[_x],"AL_spark\al_spark_damage.sqf"] remoteExec ["execVM",2];
+		//[[_x],"AL_spark\al_spark_damage.sqf"] remoteExec ["execVM",2];
+	        {_x setVelocity [1+random 3,1+random 3,1+random 5]; _x setDammage ((getDammage _x) + 0.2)} foreach _list_units_in_range;   //comment this line is you don't want sparky to deal damage
 		//_damage_ante = getDammage _x;	_x setDamage [_damage_ante+0.2, true];
 		};
 	} foreach _list_units_in_range;
