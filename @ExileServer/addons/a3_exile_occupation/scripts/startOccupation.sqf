@@ -30,19 +30,24 @@ if(SC_occupyLootCratesMarkers) then
 if(SC_debug) then { SC_refreshTime = 60; }else{ SC_refreshTime = 300; };
 
 // Add selected occupation scripts to Exile Threading System
-if(SC_occupyLootCrates) then
+if(SC_Spectre) then
+{
+	uiSleep 15; // delay the start
+	call compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\occupationSpectre.sqf";
+};
+if(SC_Fart) then
 {
 	uiSleep 15; // delay the start
 	call compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\occupationFarty.sqf";
 };
 
 // Add selected occupation scripts to Exile Threading System
-if(SC_occupyLootCrates) then
+if(SC_Scream) then
 {
 	uiSleep 15; // delay the start
 	call compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\occupationScreamer.sqf";
 };
-
+// Add selected occupation scripts to Exile Threading System
 if (SC_fastNights) then
 {
 	fnc_checkMultiplier = compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\occupationFastNights.sqf";

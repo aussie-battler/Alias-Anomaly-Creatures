@@ -2,10 +2,10 @@ private ["_veh","_weed","_weed2","_weed3","_weed4","_weed5","_weed6","_staticGun
 
 if (!isServer) exitWith {};
 
-_logDetail = format ["[OCCUPATION:LootCrates]:: Starting Occupation Loot Crates"];
+_logDetail = format ["[OCCUPATION:Farty]:: Starting Occupation Farty"];
 [_logDetail] call SC_fnc_log;
 
-_logDetail = format["[OCCUPATION:LootCrates]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofLootCrates];
+_logDetail = format["[OCCUPATION:Farty]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofLootCrates];
 [_logDetail] call SC_fnc_log;
 private _position = [0,0,0];
 
@@ -124,13 +124,13 @@ for "_i" from 1 to SC_numberofLootCrates do
 					"random"
 				] call DMS_fnc_SpawnAIVehicle;		
 
-				_logDetail = format ["[OCCUPATION:LootCrates]::  Creating crate %3 at drop zone %1 with %2 guards",_position,_AICount,_i];
+				_logDetail = format ["[OCCUPATION:Farty]::  Creating crate %3 at drop zone %1 with %2 guards",_position,_AICount,_i];
 				[_logDetail] call SC_fnc_log;		
 			};
 	}
 	else
 	{
-		_logDetail = format ["[OCCUPATION:LootCrates]::  Creating crate %2 at drop zone %1 with no guards",_position,_i];
+		_logDetail = format ["[OCCUPATION:Farty]::  Creating crate %2 at drop zone %1 with no guards",_position,_i];
 		[_logDetail] call SC_fnc_log;	
 	};
 
