@@ -43,17 +43,31 @@ Exile mission file - <br />
 ```
 class CfgSounds
 {
-#include "sound\sounds.hpp"
+#include "sound\sound_farty\sound.ext"
+#include "sound\sound_screamer\sound.ext"
+#include "sound\sound_sparky\sound.ext"
+#include "sound\sound_strigoi\sound.ext"
 };
 ```
-(If you already have a class CfgSounds just add in the line: #include "sound\sounds.hpp")
-
+If you already have a class CfgSounds just add in the lines:   
+```
+#include "sound\sound_farty\sound.ext"
+#include "sound\sound_screamer\sound.ext"
+#include "sound\sound_sparky\sound.ext"
+#include "sound\sound_strigoi\sound.ext"
+```
 3. Repack your mission file & that bit is done.
 
 a3_exile_occupation - 
-1. Open @ExileServer\addons\a3_exile_occupation\config.sqf and set lootcrates to "true":
+1. Open @ExileServer\addons\a3_exile_occupation\config.sqf and:
+   + Set lootcrates to "true"
+   + Add in the SC_Fart, SC_Scream & SC_Spectre code. 
+   + Turn off Anomolies by setting this section to false.
 ```
-SC_occupyLootCrates = true;  // true if you want to have random loot crates with guards
+SC_occupyLootCrates		    	= true;			// true if you want to have random loot crates with guards
+SC_Fart					= true;			// true if you want Alias Farty
+SC_Scream				= true;			// true if you want Alias Screamer
+SC_Spectre                       	= true;			// true if you want Alias Spectre 
 ```
 Now find & change the following:
 ```
@@ -126,10 +140,6 @@ _box setVariable ["ExileMoney", (5000 + round (random (20000))),true];//Adds bet
 ```
 in occupationFarty.sqf & occupationScreamer.sqf
 
-**Known issues that I would love to fix (I need your help):**
-+ The ToXic field doesn't give you damage. It is suppose to make you take damage unless you wear a protective item. 
-+ Sparky doesn't give you damage either, you are suppose to wear a protective device to not take damage.
-+ Farty disappears & reappears according to the map marker. It is for this reason I won't make the mapmarker disappear when players get close to the mission. The mission was getting exploited on our servers with players running in to the loot crate, causing Farty to vanish. Maybe Farty can be reprogrammed to appear on "_postion" instead of the map marker?  
 
 Need HELP?   
 Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-creatures-pack-by-alias/#comment-192572
