@@ -147,4 +147,4 @@ Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-cre
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
 ![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
 ![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282356862977/20180519231141_1.jpg)
-
+![Spectre](https://cdn.discordapp.com/attachments/281649762934194187/451072062606540811/20180529013425_1.jpg)
