@@ -111,7 +111,7 @@ SC_LootCrateItems           	= [
 				    ["Exile_Item_MetalScrews",0,5]
                             ];        
 ```			    
-2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, startOccupation.sqf 
+2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, occupationSpectre.sqf, startOccupation.sqf 
    into your @ExileServer\addons\a3_exile_occupation\scripts folder.
    
 **JOB DONE, sit back and have a beer.**
