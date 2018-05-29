@@ -135,7 +135,7 @@ SC_LootCrateItems           	= [
 					"B_Carryall_ghex_F"  //backpack
 				];
 ```
-+ Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf & occupationScreamer.sqf  
++ Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf, occupationSpectre.sqf & occupationScreamer.sqf  
 + Harvest the weed adding this cool script by @GolovaRaoul http://www.exilemod.com/topic/24426-harvest-weed/
 + Change the loot $$cash$$ amount search for:
 ```
