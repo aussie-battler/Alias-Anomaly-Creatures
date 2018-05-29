@@ -52,7 +52,7 @@ class CfgSounds
 #include "sound\sound_strigoi\sound.ext"
 };
 ```
-If you already have a class CfgSounds just add in the lines:   
+If you already have a class CfgSounds just add these lines into it:   
 ```
 #include "sound\sound_farty\sound.ext"
 #include "sound\sound_screamer\sound.ext"
