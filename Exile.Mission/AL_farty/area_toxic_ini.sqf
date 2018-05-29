@@ -206,7 +206,7 @@ _part_body =[_cap_segment,_carcasa_coada,_carcasa_coada_1,_carcasa_coada_2];
 					{
 					_farty_boss enableSimulation true;
 					_poz_fart = [getMarkerPos _location_mark,1,_radius_toxic,2,0,0,0] call BIS_fnc_findSafePos;
-					_farty_boss setpos _poz_fart;
+					_farty_boss setPos _poz_fart;
 					_farty_loc setPos _poz_fart;
 					[[_farty_loc],"AL_farty\inout.sqf"] remoteExec ["execVM"];
 					[_farty_loc,["01_strig_fart",200]] remoteExec ["say3d"];
@@ -258,7 +258,7 @@ _part_body =[_cap_segment,_carcasa_coada,_carcasa_coada_1,_carcasa_coada_2];
 					if (!(_farty_boss getVariable "ascuns")) then 
 					{
 					_farty_boss setVariable ["ascuns",true,true];
-					_farty_loc setpos (getpos _farty_boss);
+					_farty_loc setPos (getPos _farty_boss);
 					[[_farty_loc],"AL_farty\inout.sqf"] remoteExec ["execVM"];
 					[_farty_loc,["01_strig_fart",200]] remoteExec ["say3d"];
 					//ascunde

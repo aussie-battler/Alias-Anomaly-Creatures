@@ -1,5 +1,8 @@
 
 class CfgSounds
 {
-#include "sound\sounds.hpp"
+#include "sound\sound_farty\sound.ext"
+#include "sound\sound_screamer\sound.ext"
+#include "sound\sound_sparky\sound.ext"
+#include "sound\sound_strigoi\sound.ext"
 };

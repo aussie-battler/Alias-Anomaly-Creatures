@@ -1,0 +1,126 @@
+	class casp_voice
+	{
+		name = "casp_voice";
+		sound[] = {"\sound\casp_voice.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class 01_salt
+	{
+		name = "01_salt";
+		sound[] = {"\sound\01_salt.ogg", db+10, 1};
+		titles[] = {};
+	};
+	class 02_salt
+	{
+		name = "2";
+		sound[] = {"\sound\02_salt.ogg", db+10, 1};
+		titles[] = {};
+	};
+	class 03_salt
+	{
+		name = "03_salt";
+		sound[] = {"\sound\03_salt.ogg", db+10, 1};
+		titles[] = {};
+	};
+	class 01_tip_casp
+	{
+		name = "01_tip_casp";
+		sound[] = {"\sound\01_tip_casp.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class 02_tip_casp
+	{
+		name = "02_tip_casp";
+		sound[] = {"\sound\02_tip_casp.ogg", 0.8, 1};
+		titles[] = {};
+	};
+	class 03_tip_casp
+	{
+		name = "03_tip_casp";
+		sound[] = {"\sound\03_tip_casp.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class 04_tip_casp
+	{
+		name = "04_tip_casp";
+		sound[] = {"\sound\04_tip_casp.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class 05_tip_casp
+	{
+		name = "05_tip_casp";
+		sound[] = {"\sound\05_tip_casp.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class 06_tip_casp
+	{
+		name = "06_tip_casp";
+		sound[] = {"\sound\06_tip_casp.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class 07_tip_casp
+	{
+		name = "07_tip_casp";
+		sound[] = {"\sound\07_tip_casp.ogg", db+5, 1};
+		titles[] = {};
+	};	
+	class 01_tease
+	{
+		name = "01_tease";
+		sound[] = {"\sound\01_tease.ogg", 1, 1};
+		titles[] = {};
+	};
+	class 02_tease
+	{
+		name = "02_tease";
+		sound[] = {"\sound\02_tease.ogg", 0.9, 1};
+		titles[] = {};
+	};
+	class 03_tease
+	{
+		name = "03_tease";
+		sound[] = {"\sound\03_tease.ogg", 1, 1};
+		titles[] = {};
+	};
+	class 04_tease
+	{
+		name = "04_tease";
+		sound[] = {"\sound\04_tease.ogg", 1, 1};
+		titles[] = {};
+	};	
+	class 01_atk_bg
+	{
+		name = "01_atk_bg";
+		sound[] = {"\sound\01_atk_bg.ogg", 1, 1};
+		titles[] = {};
+	};
+	class 02_atk
+	{
+		name = "02_atk";
+		sound[] = {"\sound\02_atk.ogg", 1, 1};
+		titles[] = {};
+	};
+	class 03_atk
+	{
+		name = "03_atk";
+		sound[] = {"\sound\03_atk.ogg", 1, 1};
+		titles[] = {};
+	};
+	class 04_atk
+	{
+		name = "04_atk";
+		sound[] = {"\sound\04_atk.ogg", 1, 1};
+		titles[] = {};
+	};
+	class tiuit
+	{
+		name = "tiuit";
+		sound[] = {\sound\tiuit.ogg, 0.2, 1.0};
+		titles[] = {0, ""};	
+	};
+	class puls
+	{
+		name = "puls";
+		sound[] = {"\sound\puls.ogg", db+10, 1};
+		titles[] = {};
+	};	
