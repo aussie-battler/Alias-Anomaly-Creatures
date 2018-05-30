@@ -71,6 +71,6 @@ SC_LootCrateItems           	= [
 				    ["Exile_Item_WaterCanisterEmpty",0,2],
 				    ["Exile_Item_Shovel",0,1],
 				    ["Exile_Item_SafeKit",1,2],
-				    ["H_PilotHelmetFighter_O",0,1],						  
+				    ["H_PilotHelmetFighter_B",0,1],						  
 				    ["Exile_Item_MetalScrews",0,5]
                             ];
