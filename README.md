@@ -14,7 +14,7 @@ Shout out to @kuplion who gave me the idea to add random objects & smoke into th
 ![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282315182085/20180519222528_1.jpg)
 **About this script:**
 
-The script places random ToXic field missions on any map with soldiers & anomaly creatures protecting a loot crate. The three creatures are Farty, Sparky & the Screamer. All creatures can be destroyed with explosives, under-barrel launchers or grenades. It is very easy to install.
+The script places random ToXic field missions on any map with soldiers & anomaly creatures protecting a loot crate. The four creatures are Farty, Sparky, Strigoi & the Screamer. All creatures can be destroyed with explosives, under-barrel launchers or grenades. It is very easy to install.
 
 **Farty** is a smelly green slug creature that appears from the ground to spit toXic goo on it's enemies.
 https://goo.gl/FSK7WV
@@ -24,6 +24,9 @@ https://goo.gl/zmJrnL
 
 **The Screamer** is an ancient statue that screams sonic waves at it's enemies. 
 https://goo.gl/Pw6KuQ
+
+**STRIGOI** a spectre that runs at lightening speeds with the abilty to jump into tree tops for cover. 
+https://goo.gl/cEZcp6
 
 The soldiers guarding the mission include up to 4 guards, two static guns and an armed vehicle. The loot in the crate includes a variety of Exile items plus $500 to $20000 poptabs.
 
@@ -43,17 +46,31 @@ Exile mission file - <br />
 ```
 class CfgSounds
 {
-#include "sound\sounds.hpp"
+#include "sound\sound_farty\sound.ext"
+#include "sound\sound_screamer\sound.ext"
+#include "sound\sound_sparky\sound.ext"
+#include "sound\sound_strigoi\sound.ext"
 };
 ```
-(If you already have a class CfgSounds just add in the line: #include "sound\sounds.hpp")
-
+If you already have a class CfgSounds just add these lines into it:   
+```
+#include "sound\sound_farty\sound.ext"
+#include "sound\sound_screamer\sound.ext"
+#include "sound\sound_sparky\sound.ext"
+#include "sound\sound_strigoi\sound.ext"
+```
 3. Repack your mission file & that bit is done.
 
 a3_exile_occupation - 
-1. Open @ExileServer\addons\a3_exile_occupation\config.sqf and set lootcrates to "true":
+1. Open @ExileServer\addons\a3_exile_occupation\config.sqf and:
+   + Set lootcrates to "true"
+   + Add in the SC_Fart, SC_Scream & SC_Spectre code. 
+   + Turn off Anomolies by setting this section to false.
 ```
-SC_occupyLootCrates = true;  // true if you want to have random loot crates with guards
+SC_occupyLootCrates		    	= true;			// true if you want to have random loot crates with guards
+SC_Fart					= true;			// true if you want Alias Farty
+SC_Scream				= true;			// true if you want Alias Screamer
+SC_Spectre                       	= true;			// true if you want Alias Spectre 
 ```
 Now find & change the following:
 ```
@@ -94,7 +111,7 @@ SC_LootCrateItems           	= [
 				    ["Exile_Item_MetalScrews",0,5]
                             ];        
 ```			    
-2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, startOccupation.sqf 
+2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, occupationSpectre.sqf, startOccupation.sqf 
    into your @ExileServer\addons\a3_exile_occupation\scripts folder.
    
 **JOB DONE, sit back and have a beer.**
@@ -118,7 +135,7 @@ SC_LootCrateItems           	= [
 					"B_Carryall_ghex_F"  //backpack
 				];
 ```
-+ Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf & occupationScreamer.sqf  
++ Add a weed crop by uncommenting CUP_A2_p_fiberplant_ep1 in occupationFarty.sqf, occupationSpectre.sqf & occupationScreamer.sqf  
 + Harvest the weed adding this cool script by @GolovaRaoul http://www.exilemod.com/topic/24426-harvest-weed/
 + Change the loot $$cash$$ amount search for:
 ```
@@ -126,10 +143,6 @@ _box setVariable ["ExileMoney", (5000 + round (random (20000))),true];//Adds bet
 ```
 in occupationFarty.sqf & occupationScreamer.sqf
 
-**Known issues that I would love to fix (I need your help):**
-+ The ToXic field doesn't give you damage. It is suppose to make you take damage unless you wear a protective item. 
-+ Sparky doesn't give you damage either, you are suppose to wear a protective device to not take damage.
-+ Farty disappears & reappears according to the map marker. It is for this reason I won't make the mapmarker disappear when players get close to the mission. The mission was getting exploited on our servers with players running in to the loot crate, causing Farty to vanish. Maybe Farty can be reprogrammed to appear on "_postion" instead of the map marker?  
 
 Need HELP?   
 Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-creatures-pack-by-alias/#comment-192572
@@ -137,4 +150,4 @@ Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-cre
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
 ![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
 ![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282356862977/20180519231141_1.jpg)
-
+![Spectre](https://cdn.discordapp.com/attachments/281649762934194187/451072062606540811/20180529013425_1.jpg)

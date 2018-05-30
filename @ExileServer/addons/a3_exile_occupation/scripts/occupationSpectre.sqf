@@ -203,11 +203,11 @@ for "_i" from 1 to SC_numberofLootCrates do
 	["Land_BagFence_Long_F",[-11.1362,-2.86011,0],75,[true,false]],
 	["Land_BagFence_Short_F",[0.532227,-1.10156,0],255,[true,false]],
 	["Land_BagFence_End_F",[2.10449,-7.57983,0],255,[true,false]],
-	["Land_TTowerSmall_1_F",[0.916504,-0.628174,-4.76837e-007],345,[true,false]],
-	["CUP_A2_p_fiberplant_ep1",[2.04004,6.35327,0],0,[true,false]],
-	["CUP_A2_p_fiberplant_ep1",[-3.78223,6.47998,0],0,[true,false]],
-	["CUP_A2_p_fiberplant_ep1",[-23.5723,-4.33057,0],0,[true,false]],
-	["CUP_A2_p_fiberplant_ep1",[-8.29297,-2.49756,0],0,[true,false]]
+	//["CUP_A2_p_fiberplant_ep1",[2.04004,6.35327,0],0,[true,false]], //add in weed here if you have CUP
+	//["CUP_A2_p_fiberplant_ep1",[-3.78223,6.47998,0],0,[true,false]],
+	//["CUP_A2_p_fiberplant_ep1",[-23.5723,-4.33057,0],0,[true,false]],
+	//["CUP_A2_p_fiberplant_ep1",[-8.29297,-2.49756,0],0,[true,false]],
+	["Land_TTowerSmall_1_F",[0.916504,-0.628174,-4.76837e-007],345,[true,false]]
 ];
 
 private _center = [_position select 0, _position select 1, 0];
