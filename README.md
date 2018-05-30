@@ -107,7 +107,7 @@ SC_LootCrateItems           	= [
       				    ["Exile_Item_WaterCanisterEmpty",0,2],
 				    ["Exile_Item_Shovel",0,1],
 				    ["Exile_Item_SafeKit",1,2],
-				    ["H_PilotHelmetFighter_O",0,1],						  
+				    ["H_PilotHelmetFighter_B",0,1],						  
 				    ["Exile_Item_MetalScrews",0,5]
                             ];        
 ```			    
@@ -146,7 +146,7 @@ in occupationFarty.sqf & occupationScreamer.sqf
 + Sparky now deals damage, players can wear / have a protective item to avoid it.   
   The protection is defined in Exile.Mission\\AL_spark\al_orb_move.sqf in line 6:
 ```
-         obj_prot_sparky = "H_CrewHelmetHeli_B";  // I set it to the helmet worn by the mission ai.   
+         obj_prot_sparky = "H_PilotHelmetFighter_B";  // I set it to the helmet worn by the mission ai.   
 ```	 
 Need HELP?   
 Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-creatures-pack-by-alias/#comment-192572
