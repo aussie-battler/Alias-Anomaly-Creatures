@@ -79,7 +79,7 @@ for "_i" from 1 to SC_numberofLootCrates do
 					[""],
 					["Rangefinder","ItemGPS"],
 					"launch_O_Titan_short_ghex_F",
-					"H_CrewHelmetHeli_B", // helmet
+					"H_PilotHelmetFighter_B", // helmet
 					"U_I_GhillieSuit",  // uniform
 					"V_PlateCarrierSpec_blk",  //vest
 					"B_Carryall_ghex_F" //backpack
@@ -251,7 +251,7 @@ _staticGuns =
 
 	null = ["Spectre_1",200,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
 	null = ["Spectre_2",200,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
-	null = ["Spectre_1","H_CrewHelmetHeli_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
-	null = ["Spectre_2","H_CrewHelmetHeli_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
-	null = ["Spectre_1","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";
-	null = ["Spectre_2","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";	
+	null = ["Spectre_1","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
+	null = ["Spectre_2","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
+	null = ["Spectre_1","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
+	null = ["Spectre_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	

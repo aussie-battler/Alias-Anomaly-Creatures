@@ -233,11 +233,11 @@ _staticGuns =
 	_vehWreck setVectorUp surfaceNormal position _vehWreck;
 };
 
-	null = ["Toxic_1","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
-	null = ["Toxic_2","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
+	null = ["Toxic_1","H_PilotHelmetFighter_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
+	null = ["Toxic_2","H_PilotHelmetFighter_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
 	//null = ["Toxic_3","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
 	//null = ["Toxic_4","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";		
-	null = ["Toxic_1","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";
-	null = ["Toxic_2","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";	
+	null = ["Toxic_1","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
+	null = ["Toxic_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	
 	//null = ["Toxic_3","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";
 	//null = ["Toxic_4","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";		

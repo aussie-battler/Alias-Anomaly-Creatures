@@ -78,7 +78,7 @@ for "_i" from 1 to SC_numberofLootCrates do
 					[""],
 					["Rangefinder","ItemGPS"],
 					"launch_O_Titan_short_ghex_F",
-					"H_CrewHelmetHeli_I", // helmet
+					"H_PilotHelmetFighter_B", // helmet
 					"U_I_Protagonist_VR",  // uniform
 					"V_PlateCarrierIAGL_dgtl",  //vest
 					"B_Carryall_ghex_F" //backpack
@@ -235,7 +235,7 @@ private _center = [_position select 0, _position select 1, 0];
 
 	null = ["screamer_1"] execVM "AL_screamer\screamer.sqf";
 	null = ["screamer_2"] execVM "AL_screamer\screamer.sqf";
-	null = ["screamer_1","H_CrewHelmetHeli_I",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
-	null = ["screamer_2","H_CrewHelmetHeli_I",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
-	null = ["screamer_1","H_CrewHelmetHeli_I",false] execvm "AL_spark\al_sparky.sqf";
-	null = ["screamer_2","H_CrewHelmetHeli_I",false] execvm "AL_spark\al_sparky.sqf";	
+	null = ["screamer_1","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
+	null = ["screamer_2","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
+	null = ["screamer_1","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
+	null = ["screamer_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	
