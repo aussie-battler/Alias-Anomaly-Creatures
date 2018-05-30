@@ -3,7 +3,7 @@
 private ["_obiect_orb","_mark_orig"];
 
 _mark_orig=_this select 0;
-obj_prot_sparky = "H_CrewHelmetHeli_B";
+obj_prot_sparky = "H_PilotHelmetFighter_B";
 
 if (!hasInterface) exitWith {};
 
