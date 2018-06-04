@@ -174,7 +174,7 @@ Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-cre
   @ExileServer\addons\a3_exile_occupation\scripts\deleteMapMarkers.sqf  
 
 + Anomalies wont depawn when the map marker deletes (except for Farty).   
-  I extended the player detection randge for Farty so you can't run in & delete the map marker (removing the Farty Slug).    
+  I extended the player detection range for Farty so you can't run in & delete the map marker (removing the Farty Slug).    
 
 
 ![Spectre](https://cdn.discordapp.com/attachments/331697969231298562/453286560821936130/20180605040854_1.jpg)  
