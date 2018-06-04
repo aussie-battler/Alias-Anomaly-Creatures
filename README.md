@@ -63,22 +63,31 @@ If you already have a class CfgSounds just add these lines into it:
 
 a3_exile_occupation - 
 1. Open @ExileServer\addons\a3_exile_occupation\config.sqf and:
-   + Set lootcrates to "true"
-   + Add in the SC_Fart, SC_Scream & SC_Spectre code. 
-   + Turn off Anomolies by setting this section to false.
+   + Just below"SC_occupyHeliCrashes = true; // true if you want to have Dayz style helicrashes.
+     Paste in the Fart Setup (ToXic Slug), Screamer Setup & Spectre Setup (Strigoi) code. 
+   + Turn off Anomolies by setting the first line in each section to false.
 ```
-SC_occupyLootCrates		    	= true;			// true if you want to have random loot crates with guards
-SC_Fart					= true;			// true if you want Alias Farty
-SC_Scream				= true;			// true if you want Alias Screamer
-SC_Spectre                       	= true;			// true if you want Alias Spectre 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	Screamer Setup 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ```
-Now find & change the following:
+Now find & change the following if needed:
 ```
-SC_SpawnLootCrateGuards	= true;	// true if you want to enable AI guards
-SC_numberofLootCrates = 2; 	// if SC_occupyLootCrates = true spawn this many loot crates (overrided below for Namalsk)
-SC_LootCrateGuards = 4;      	// number of AI to spawn at each crate
-SC_LootCrateGuardsRandomize = true; // Use a random number of guards up to a maximum = SC_LootCrateGuards (1 to 4 Guards)
-SC_occupyLootCratesMarkers = true; // true if you want to have markers on the loot crate spawns
+SC_Screamer     		= true;		// true if you want Alias Screamer
+SC_occupyScreamerStatic         = false;       // true if you want to have random loot crates spawn in pre-defined locations set in SC_occupyLootCratesLocations
+SC_occupyScreamerLocations	= [
+                                    [1000,1000,0],
+                                    [2000,2000,0],
+                                    [3000,3000,0],
+                                    [4000,4000,0]
+                                ];
+SC_SpawnScreamerGuards			= true;		// true if you want to enable AI guards
+SC_numberofScreamers       	        = 2; 	// if SC_Screamer = true spawn this many Screamer missions (overrided below for Namalsk)
+SC_ScreamerCrateGuards          	= 4;     // number of AI to spawn at each crate
+SC_ScreamerCrateGuardsRandomize 	= true;  // Use a random number of guards up to a maximum = SC_LootCrateGuards (so between 1 and SC_LootCrateGuards)
+SC_occupyScreamerMarkers		= true;	 // true if you want to have markers on the loot crate spawns
+
+SC_ScreamerRopeAttach               	= false;   // Allow lootcrates to be airlifted (for SC_occupyLootCrates and SC_occupyHeliCrashes)
 ```
 Change the loot gear by searching for SC_LootCrateItems, here is mine:
 ```
@@ -129,7 +138,7 @@ SC_LootCrateItems           	= [
 					[""],
 					["Rangefinder","ItemGPS"],
 					"launch_O_Titan_short_ghex_F",
-					"H_PilotHelmetFighter_B",  //helmet
+					"H_PilotHelmetFighter_B",  //helmet (leave this, it is the protection against Sparky's damage)
 					"U_I_Protagonist_VR",   //the ai uniform
 					"V_PlateCarrierIAGL_dgtl", //vest
 					"B_Carryall_ghex_F"  //backpack
