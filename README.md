@@ -65,7 +65,7 @@ a3_exile_occupation -
 1. Open @ExileServer\addons\a3_exile_occupation\config.sqf and:
    + Just below"SC_occupyHeliCrashes = true; // true if you want to have Dayz style helicrashes.
      Paste in the Fart Setup (ToXic Slug), Screamer Setup & Spectre Setup (Strigoi) code. 
-   + Turn off Anomolies by setting the first line in each section to false.
+   + Turn off Anomalies by setting the first line in each section to false. You can also configure each anomaly to your liking.
 ```
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Screamer Setup 
