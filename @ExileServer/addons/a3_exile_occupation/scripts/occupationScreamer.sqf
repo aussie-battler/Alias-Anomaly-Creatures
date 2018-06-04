@@ -5,20 +5,20 @@ if (!isServer) exitWith {};
 _logDetail = format ["[OCCUPATION:Screamer]:: Starting Occupation Screamer"];
 [_logDetail] call SC_fnc_log;
 
-_logDetail = format["[OCCUPATION:Screamer]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofLootCrates];
+_logDetail = format["[OCCUPATION:Screamer]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofScreamers];
 [_logDetail] call SC_fnc_log;
 private _position = [0,0,0];
 
-for "_i" from 1 to SC_numberofLootCrates do
+for "_i" from 1 to SC_numberofScreamers do
 {
 	_validspot 	= false;
 	while{!_validspot} do 
 	{
 		sleep 0.2;
-		if(SC_occupyLootCratesStatic) then
+		if(SC_occupyScreamerStatic) then
 		{
-			_tempPosition = SC_occupyLootCratesLocations call BIS_fnc_selectRandom;
-			SC_occupyLootCratesLocations = SC_occupyLootCratesLocations - _tempPosition;
+			_tempPosition = SC_occupyScreamerLocations call BIS_fnc_selectRandom;
+			SC_occupyScreamerLocations = SC_occupyScreamerLocations - _tempPosition;
 			
 			_position = [_tempPosition select 0, _tempPosition select 1, _tempPosition select 2];
 			if(isNil "_position") then
@@ -40,23 +40,30 @@ for "_i" from 1 to SC_numberofLootCrates do
 	
 	_mapMarkerName = format ["Screamer_%1", _i];
 	
-	if (SC_occupyLootCratesMarkers) then 
+	if (SC_occupyScreamerMarkers) then 
 	{		
-		_event_marker = createMarker [ format ["Screamer_%1", _i], _position];
+		_event_marker = createMarker [_mapMarkerName, _position];
 		_event_marker setMarkerColor "ColorGreen";
 		_event_marker setMarkerAlpha 1;
 		_event_marker setMarkerText "Screamer";
 		_event_marker setMarkerType "ExileContaminatedZoneIcon";
 	};	
+	
+	null = [_mapMarkerName] execVM "AL_screamer\screamer.sqf";
+	//	null = ["screamer_2"] execVM "AL_screamer\screamer.sqf";
+	null = [_mapMarkerName,"H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
+	//	null = ["screamer_2","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
+	null = [_mapMarkerName,"H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
+	//	null = ["screamer_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	
 
-	if (SC_SpawnLootCrateGuards) then
+	if (SC_SpawnScreamerGuards) then
 	{
 			//Infantry spawn using DMS
-			_AICount = SC_LootCrateGuards;
+			_AICount = SC_ScreamerCrateGuards;
 			
-			if(SC_LootCrateGuardsRandomize) then 
+			if(SC_ScreamerCrateGuardsRandomize) then 
 			{
-				_AICount = 1 + (round (random (SC_LootCrateGuards-1)));    
+				_AICount = 1 + (round (random (SC_ScreamerCrateGuards-1)));    
 			};
 
 			if(_AICount > 0) then
@@ -148,7 +155,7 @@ for "_i" from 1 to SC_numberofLootCrates do
 	clearWeaponCargoGlobal _box;
 	clearItemCargoGlobal _box;
 	
-	_box enableRopeAttach SC_ropeAttach; 	// Stop people airlifting the crate
+	_box enableRopeAttach SC_ScreamerRopeAttach; 	// Stop people airlifting the crate
 	_box setVariable ["permaLoot",true]; 	// Crate stays until next server restart
 	_box setVariable ["ExileMoney", (5000 + round (random (20000))),true];
 	_box allowDamage false; 				// Stop crates taking damage
@@ -214,7 +221,7 @@ _staticGuns =
 	["Land_AncientStatue_01_F",[0.0488281,15.7905,0],5.83839,[true,false]],
 	["Land_AncientStatue_02_F",[-6.80859,-12.3301,0],269.078,[true,false]],
 	["Land_AncientStatue_02_F",[7.09717,-13.1284,0],91.2094,[true,false]],
-    //["CUP_A2_p_fiberplant_ep1",[12.9282,2.64453,0],0,[true,false]],
+	//["CUP_A2_p_fiberplant_ep1",[12.9282,2.64453,0],0,[true,false]],
 	//["CUP_A2_p_fiberplant_ep1",[-13.062,-0.0585938,0],0,[true,false]],
 	//["CUP_A2_p_fiberplant_ep1",[-6.83789,-11.8901,0],0,[true,false]],
 	//["CUP_A2_p_fiberplant_ep1",[0.144531,15.3569,0],0,[true,false]],
@@ -233,9 +240,4 @@ private _center = [_position select 0, _position select 1, 0];
 } forEach _objects;
 };
 
-	null = ["screamer_1"] execVM "AL_screamer\screamer.sqf";
-	null = ["screamer_2"] execVM "AL_screamer\screamer.sqf";
-	null = ["screamer_1","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
-	null = ["screamer_2","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
-	null = ["screamer_1","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
-	null = ["screamer_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	
+

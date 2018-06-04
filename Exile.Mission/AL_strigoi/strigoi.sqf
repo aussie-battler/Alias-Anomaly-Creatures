@@ -2,7 +2,7 @@
 // ["strigoi_1",500,false,0.1] execvm "AL_strigoi\strigoi.sqf";
 if (!isServer) exitwith {};
 
-private ["_list_unit_range_casp","_pos_strig","_poz_orig_sc","_anomalie_dedus","_hp_strigoi","_gasit","_obj_de_agatat","_pot_poz","_press_implicit_x","_press_implicit_y","_fct_mult","_vert_vit","_inaltime_salt","_distanta_salt","_dur_zbor","_umbla_casper","_strigoi","_tgt_casp"];
+private ["_spawn_loc","_list_unit_range_casp","_pos_strig","_poz_orig_sc","_anomalie_dedus","_hp_strigoi","_gasit","_obj_de_agatat","_pot_poz","_press_implicit_x","_press_implicit_y","_fct_mult","_vert_vit","_inaltime_salt","_distanta_salt","_dur_zbor","_umbla_casper","_strigoi","_tgt_casp"];
 
 fnc_avoid_casp ={
 	private ["_danger_close","_op_dir","_chased_units","_fct","_reldir","_avoid_poz"];
@@ -30,11 +30,11 @@ _strigoi enableSimulationGlobal false; _strigoi hideObjectGlobal true;
 };
 
 fnc_show_strig = {
-private ["_strigoi","_poz_orig_sc","_pos_strig","_teritoriu"];
+private ["_strigoi","_poz_orig_sc","_pos_strig","_teritoriu","_spawn_loc"];
 _strigoi= _this select 0;
 _poz_orig_sc= _this select 1;
 _teritoriu= _this select 2;
-_pos_strig = [getmarkerpos _poz_orig_sc,1,_teritoriu/10, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+_pos_strig = [getPos _poz_orig_sc,1,_teritoriu/10, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 _strigoi setPos _pos_strig;
 _strigoi setVariable ["vizibil",true,true];
 [[_strigoi],"AL_strigoi\strigoi_sfx.sqf"] remoteExec ["execVM",0,true];
@@ -116,7 +116,7 @@ fnc_strig_drain ={
 */
 if (!isServer) exitWith {};
 
-_poz_orig_sc	= _this select 0;
+_spawn_loc	= _this select 0;
 _teritoriu		= _this select 1;
 _vizible_day	= _this select 2;
 _damage_strig	= _this select 3;
@@ -126,7 +126,9 @@ hp_strig = 1/_hp_strigoi;
 
 if (!_vizible_day) then {waitUntil{sleep 5; sunOrMoon==0}};
 	_grp = createGroup CIVILIAN;
-	_pos_strig = [getmarkerpos _poz_orig_sc,1,_teritoriu/10, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+	
+	_poz_orig_sc =  "Land_HelipadEmpty_F" createVehicle [getMarkerPos _spawn_loc select 0,getMarkerPos _spawn_loc select 1,round (2+random 7)];
+	_pos_strig = [getPos _poz_orig_sc,1,_teritoriu/10, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 	_strigoi = _grp createUnit ["C_Soldier_VR_F",_pos_strig, [], _teritoriu/10,"NONE"];
 	_strigoi setSpeaker "NoVoice";_strigoi disableConversation true;_strigoi setcaptive true; _strigoi addRating -10000;_strigoi setBehaviour "CARELESS";_strigoi enableFatigue false;_strigoi setSkill ["courage", 1];_strigoi setUnitPos "UP"; RemoveAllItems _strigoi; removeUniform _strigoi; Removevest _strigoi; removeHeadgear _strigoi; removeAllWeapons _strigoi; _strigoi unassignItem "NVGoggles"; _strigoi removeItem "NVGoggles";_strigoi setUnitPos "UP";
 	_strigoi removeAllEventHandlers "hit";
@@ -153,7 +155,7 @@ while {alive _strigoi} do
 		_tgt_casp = _list_unit_range_casp call BIS_fnc_selectRandom;
 		[_strigoi,_poz_orig_sc,_teritoriu] call fnc_show_strig;
 		//if (!isNil "_tgt_casp") then {
-		while {(!isNil "_tgt_casp")and(alive _strigoi)and((_strigoi distance getmarkerpos _poz_orig_sc)<_teritoriu)} do 
+		while {(!isNil "_tgt_casp")and(alive _strigoi)and((_strigoi distance getPos _poz_orig_sc)<_teritoriu)} do 
 		{
 			//[_list_unit_range_casp] call fnc_strig_drain;
 			_gasit = false;

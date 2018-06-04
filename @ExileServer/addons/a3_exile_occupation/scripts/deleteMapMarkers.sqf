@@ -22,10 +22,9 @@ if (SC_occupyLootCratesMarkers) then
 	};						
 };
 
-/*
 if (SC_occupyLootCratesMarkers) then
 {
-	// If you put this code in the Slimy Fart won't reappear when players reach the crate.
+	// Delete the map marker on a loot crate when a player gets in range
 
 	for "_i" from 1 to SC_numberofLootCrates do
 	{
@@ -38,6 +37,7 @@ if (SC_occupyLootCratesMarkers) then
 			if([_pos, 10] call ExileClient_util_world_isAlivePlayerInRange) then
 			{ 
 				deleteMarker _markerName; 
+				["toastRequest", ["InfoTitleAndText", ["The ToXic SluG has been defeated!", "Grab a Pilot Helmet from a dead soldier to get near the crate."]]] call ExileServer_system_network_send_broadcast;
 				_logDetail =  format ["[OCCUPATION:LootCrates]:: marker %1 removed at %2",_markerName,time];
 				[_logDetail] call SC_fnc_log;
 			};
@@ -45,13 +45,36 @@ if (SC_occupyLootCratesMarkers) then
 		};
 	};						
 };
-*/
 
-if (SC_occupyLootCratesMarkers) then
+if (SC_occupyFartMarkers) then
 {
 	// Delete the map marker on a loot crate when a player gets in range
 
-	for "_i" from 1 to SC_numberofLootCrates do
+	for "_i" from 1 to SC_numberofFarts do
+	{
+		_markerName = format ["Spectre_%1", _i];
+		_pos = getMarkerPos _markerName;
+		
+		if(!isNil "_pos") then
+		{
+			
+			if([_pos, 15] call ExileClient_util_world_isAlivePlayerInRange) then
+			{ 
+				deleteMarker _markerName; 
+				["toastRequest", ["InfoTitleAndText", ["Spectre has been defeated!", "Grab a Pilot Helmet from a dead soldier to get near the crate."]]] call ExileServer_system_network_send_broadcast;				
+				_logDetail =  format ["[OCCUPATION:LootCrates]:: marker %1 removed at %2",_markerName,time];
+				[_logDetail] call SC_fnc_log;
+			};
+			
+		};
+	};						
+};
+
+if (SC_occupyScreamerMarkers) then
+{
+	// Delete the map marker on a loot crate when a player gets in range
+
+	for "_i" from 1 to SC_numberofScreamers do
 	{
 		_markerName = format ["Screamer_%1", _i];
 		_pos = getMarkerPos _markerName;
@@ -59,9 +82,10 @@ if (SC_occupyLootCratesMarkers) then
 		if(!isNil "_pos") then
 		{
 			
-			if([_pos, 10] call ExileClient_util_world_isAlivePlayerInRange) then
+			if([_pos, 15] call ExileClient_util_world_isAlivePlayerInRange) then
 			{ 
 				deleteMarker _markerName; 
+				["toastRequest", ["InfoTitleAndText", ["The Screamer has been defeated!", "Grab a Pilot Helmet from a dead soldier to get near the crate."]]] call ExileServer_system_network_send_broadcast;				
 				_logDetail =  format ["[OCCUPATION:LootCrates]:: marker %1 removed at %2",_markerName,time];
 				[_logDetail] call SC_fnc_log;
 			};

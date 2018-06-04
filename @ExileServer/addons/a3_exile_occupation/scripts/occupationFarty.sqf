@@ -5,20 +5,20 @@ if (!isServer) exitWith {};
 _logDetail = format ["[OCCUPATION:Farty]:: Starting Occupation Farty"];
 [_logDetail] call SC_fnc_log;
 
-_logDetail = format["[OCCUPATION:Farty]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofLootCrates];
+_logDetail = format["[OCCUPATION:Farty]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofFarts];
 [_logDetail] call SC_fnc_log;
 private _position = [0,0,0];
 
-for "_i" from 1 to SC_numberofLootCrates do
+for "_i" from 1 to SC_numberofFarts do
 {
 	_validspot 	= false;
 	while{!_validspot} do 
 	{
 		sleep 0.2;
-		if(SC_occupyLootCratesStatic) then
+		if(SC_occupyFartStatic) then
 		{
-			_tempPosition = SC_occupyLootCratesLocations call BIS_fnc_selectRandom;
-			SC_occupyLootCratesLocations = SC_occupyLootCratesLocations - _tempPosition;
+			_tempPosition = SC_occupyFartLocations call BIS_fnc_selectRandom;
+			SC_occupyFartLocations = SC_occupyFartLocations - _tempPosition;
 			
 			_position = [_tempPosition select 0, _tempPosition select 1, _tempPosition select 2];
 			if(isNil "_position") then
@@ -40,23 +40,29 @@ for "_i" from 1 to SC_numberofLootCrates do
 	
 	_mapMarkerName = format ["Toxic_%1", _i];
 	
-	if (SC_occupyLootCratesMarkers) then 
+	if (SC_occupyFartMarkers) then 
 	{		
-		_event_marker = createMarker [ format ["Toxic_%1", _i], _position];
+		_event_marker = createMarker [_mapMarkerName, _position];
 		_event_marker setMarkerColor "ColorGreen";
 		_event_marker setMarkerAlpha 1;
 		_event_marker setMarkerText "Toxic Weed Crop";
 		_event_marker setMarkerType "ExileContaminatedZoneIcon";
 	};	
-
-	if (SC_SpawnLootCrateGuards) then
+	
+	null = [_mapMarkerName,"H_PilotHelmetFighter_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
+	//null = ["Toxic_2","H_PilotHelmetFighter_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
+	//null = ["Toxic_3","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
+	//null = ["Toxic_4","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";		
+	null = [_mapMarkerName,"H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
+	
+	if (SC_SpawnFartGuards) then
 	{
 			//Infantry spawn using DMS
-			_AICount = SC_LootCrateGuards;
+			_AICount = SC_FartCrateGuards;
 			
-			if(SC_LootCrateGuardsRandomize) then 
+			if(SC_FartCrateGuardsRandomize) then 
 			{
-				_AICount = 1 + (round (random (SC_LootCrateGuards-1)));    
+				_AICount = 1 + (round (random (SC_FartCrateGuards-1)));    
 			};
 
 			if(_AICount > 0) then
@@ -146,9 +152,9 @@ for "_i" from 1 to SC_numberofLootCrates do
 	clearWeaponCargoGlobal _box;
 	clearItemCargoGlobal _box;
 	
-	_box enableRopeAttach SC_ropeAttach; 	// Stop people airlifting the crate
+	_box enableRopeAttach SC_FartropeAttach; 	// Stop people airlifting the crate
 	_box setVariable ["permaLoot",true]; 	// Crate stays until next server restart
-	_box setVariable ["ExileMoney", (5000 + round (random (20000))),true]; //Adds between $5K to $20K in poptabs to the loot crate
+	_box setVariable ["ExileMoney",16000,true]; //Adds 16,000 poptabs to the box/container/crate referred to as "_crate1"
 	_box allowDamage false; 				// Stop crates taking damage
 
 	{
@@ -201,7 +207,7 @@ _staticGuns =
 	"difficult",
 	"bandit",
 	"random"
-] call DMS_fnc_SpawnAIStaticMG;
+] call DMS_fnc_SpawnAIStaticMG;					   
 	// Add a wreck for defensive purposes
 	_wrecks = selectRandom [
 							//"CUP_A2_oil_pump_ep1",
@@ -215,29 +221,10 @@ _staticGuns =
 							];
 							
 	_vehWreck = _wrecks createVehicle [0,0,0];
-	//null = ["Toxic","H_CrewHelmetHeli_B",true,30,0.01,true,7] execVM "AL_farty\area_toxic_ini.sqf";
 
-	/*
-	_effect = "test_EmptyObjectForSmoke";	
-	if(SC_HeliCrashesOnFire) then 
-	{
-		_effect = "test_EmptyObjectForFireBig";	
-	};
-	_wreckFire = _effect createVehicle (position _vehWreck);   
-	_wreckFire attachto [_vehWreck, [0,0,-1]];
-	*/
 	
 	_vehWreckRelPos = _box getRelPos [(10 + (ceil random 15)), (random 360)];
 	_vehWreck setPos _vehWreckRelPos;
 	_vehWreck setDir (random 360);
 	_vehWreck setVectorUp surfaceNormal position _vehWreck;
 };
-
-	null = ["Toxic_1","H_PilotHelmetFighter_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
-	null = ["Toxic_2","H_PilotHelmetFighter_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
-	//null = ["Toxic_3","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
-	//null = ["Toxic_4","H_CrewHelmetHeli_B",true,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";		
-	null = ["Toxic_1","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
-	null = ["Toxic_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	
-	//null = ["Toxic_3","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";
-	//null = ["Toxic_4","H_CrewHelmetHeli_B",false] execvm "AL_spark\al_sparky.sqf";		

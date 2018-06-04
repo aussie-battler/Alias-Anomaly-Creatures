@@ -5,20 +5,20 @@ if (!isServer) exitWith {};
 _logDetail = format ["[OCCUPATION:Spectre]:: Starting Occupation Spectre"];
 [_logDetail] call SC_fnc_log;
 
-_logDetail = format["[OCCUPATION:Spectre]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofLootCrates];
+_logDetail = format["[OCCUPATION:Spectre]:: worldname: %1 crates to spawn: %2",worldName,SC_numberofSpectres];
 [_logDetail] call SC_fnc_log;
 private _position = [0,0,0];
 
-for "_i" from 1 to SC_numberofLootCrates do
+for "_i" from 1 to SC_numberofSpectres do
 {
 	_validspot 	= false;
 	while{!_validspot} do 
 	{
 		sleep 0.2;
-		if(SC_occupyLootCratesStatic) then
+		if(SC_occupySpectreStatic) then
 		{
-			_tempPosition = SC_occupyLootCratesLocations call BIS_fnc_selectRandom;
-			SC_occupyLootCratesLocations = SC_occupyLootCratesLocations - _tempPosition;
+			_tempPosition = SC_occupySpectreLocations call BIS_fnc_selectRandom;
+			SC_occupySpectreLocations = SC_occupySpectreLocations - _tempPosition;
 			
 			_position = [_tempPosition select 0, _tempPosition select 1, _tempPosition select 2];
 			if(isNil "_position") then
@@ -40,24 +40,30 @@ for "_i" from 1 to SC_numberofLootCrates do
 	
 	_mapMarkerName = format ["Spectre_%1", _i];
 	
-	if (SC_occupyLootCratesMarkers) then 
+	if (SC_occupySpectreMarkers) then 
 	{		
-		_event_marker = createMarker [ format ["Spectre_%1", _i], _position];
-		//_event_marker setMarkerShapeLocal "ICON";
+		_event_marker = createMarker [_mapMarkerName, _position];
 		_event_marker setMarkerColor "ColorBlack";
 		_event_marker setMarkerAlpha 1;
 		_event_marker setMarkerText "Spectre";
 		_event_marker setMarkerType "KIA";
 	};	
 
-	if (SC_SpawnLootCrateGuards) then
+		null = [_mapMarkerName,200,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	//null = ["Spectre_2",200,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	null = [_mapMarkerName,"H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
+//	null = ["Spectre_2","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
+	null = [_mapMarkerName,"H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
+	//null = ["Spectre_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	
+	
+	if (SC_SpawnSpectreGuards) then
 	{
 			//Infantry spawn using DMS
-			_AICount = SC_LootCrateGuards;
+			_AICount = SC_SpectreCrateGuards;
 			
-			if(SC_LootCrateGuardsRandomize) then 
+			if(SC_SpectreCrateGuardsRandomize) then 
 			{
-				_AICount = 1 + (round (random (SC_LootCrateGuards-1)));    
+				_AICount = 1 + (round (random (SC_SpectreCrateGuards-1)));    
 			};
 
 			if(_AICount > 0) then
@@ -130,7 +136,7 @@ for "_i" from 1 to SC_numberofLootCrates do
 	clearWeaponCargoGlobal _box;
 	clearItemCargoGlobal _box;
 	
-	_box enableRopeAttach SC_ropeAttach; 	// Stop people airlifting the crate
+	_box enableRopeAttach SC_SpectreropeAttach; 	// Stop people airlifting the crate
 	_box setVariable ["permaLoot",true]; 	// Crate stays until next server restart
 	_box setVariable ["ExileMoney", (5000 + round (random (20000))),true];
 	_box allowDamage false; 				// Stop crates taking damage
@@ -249,9 +255,4 @@ _staticGuns =
 
 };
 
-	null = ["Spectre_1",200,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
-	null = ["Spectre_2",200,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
-	null = ["Spectre_1","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";
-	null = ["Spectre_2","H_PilotHelmetFighter_B",false,30,0.01,true,12] execVM "AL_farty\area_toxic_ini.sqf";	
-	null = ["Spectre_1","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";
-	null = ["Spectre_2","H_PilotHelmetFighter_B",false] execvm "AL_spark\al_sparky.sqf";	
+

@@ -42,7 +42,7 @@ if(SC_Fart) then
 };
 
 // Add selected occupation scripts to Exile Threading System
-if(SC_Scream) then
+if(SC_Screamer) then
 {
 	uiSleep 15; // delay the start
 	call compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\occupationScreamer.sqf";

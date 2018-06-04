@@ -94,6 +94,7 @@ _no_puddles		 = _this select 6;
 obj_prot_toxic = _toxic_prot_mask;
 publicVariable "obj_prot_toxic";
 
+		  
 _farty_loc = "Land_HelipadEmpty_F" createVehicle [getMarkerPos _location_mark select 0,getMarkerPos _location_mark select 1,-500];
 
 if (_no_puddles>0) then {for "_tt" from 1 to _no_puddles step 1 do {[_location_mark] call fnc_create_puddle}};
@@ -154,6 +155,7 @@ _farty_loc setPos _poz_fart;
 _farty_boss setpos _poz_fart;
 // efect aparitie
 [[_farty_loc],"AL_farty\inout.sqf"] remoteExec ["execVM"];
+				
 sleep 1;
 _farty_loc setpos (getMarkerPos _location_mark);
 _farty_boss setDamage 0;
@@ -196,7 +198,7 @@ _fart_parts =[_cap_segment,_carcasa_coada,_carcasa_coada_1,_carcasa_coada_2,_fis
 _part_body =[_cap_segment,_carcasa_coada,_carcasa_coada_1,_carcasa_coada_2];
 	while {alive _farty_boss} do 
 	{
-		_list_ai_in_range_fart = (position _farty_boss) nearEntities [['Exile_Unit_Player'],50];
+		_list_ai_in_range_fart = (position _farty_boss) nearEntities [['Exile_Unit_Player'],100];
 		_list_ai_in_range_fart = _list_ai_in_range_fart -[_farty_boss];
 		if (count _list_ai_in_range_fart > 0) then 
 		{
@@ -218,7 +220,7 @@ _part_body =[_cap_segment,_carcasa_coada,_carcasa_coada_1,_carcasa_coada_2];
 			_farty_boss setVariable ["ascuns",false,true];
 			sleep 1;
 			_tgt_fart = _list_ai_in_range_fart call BIS_fnc_selectRandom;
-			while {(_tgt_fart distance _farty_boss < 50)and(alive _tgt_fart)} do 
+			while {(_tgt_fart distance _farty_boss < 80)and(alive _tgt_fart)} do 
 			{
 				_farty_boss doMove (getpos _tgt_fart);
 				if (_trail_on) then {[_carcasa_coada_1] spawn fnc_puddle_trail};

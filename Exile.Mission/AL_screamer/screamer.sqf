@@ -20,7 +20,7 @@ fnc_avoid_screamer ={
 
 if (!isServer) exitWith {};
 
-private ["_entitate"];
+private ["_box","_entitate","_poz_orig_sc"];
 
 _poz_orig_sc = _this select 0;
 _grp = createGroup CIVILIAN;
@@ -143,6 +143,7 @@ while {alive _entitate} do
     sleep 5;
 };
 
+	
 deleteVehicle _entitate;
 [[_screamer_anomally],"AL_screamer\teleport_screamer.sqf"] remoteExec ["execvm"];
 sleep 4;

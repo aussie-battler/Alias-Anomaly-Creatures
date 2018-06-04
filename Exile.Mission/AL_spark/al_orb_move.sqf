@@ -1,15 +1,18 @@
 // by ALIAS
 
-private ["_obiect_orb","_mark_orig"];
+private ["_obiect_orb","_mark_orig","_spawn_loc"];
 
-_mark_orig=_this select 0;
+_spawn_loc =_this select 0;
 obj_prot_sparky = "H_PilotHelmetFighter_B";
 
 if (!hasInterface) exitWith {};
 
-_poz_ini = [getMarkerPos _mark_orig select 0,getMarkerPos _mark_orig select 1,round (2+random 7)];
-                //_obiect_orb = "testsphere1" createVehiclelocal [getMarkerPos _mark_orig select 0,getMarkerPos _mark_orig select 1,round (2+random 7)]; //aussie		
-_obiect_orb = "Sign_Sphere10cm_F" createVehiclelocal [getMarkerPos _mark_orig select 0,getMarkerPos _mark_orig select 1,round (2+random 7)];
+_mark_orig =  "Land_HelipadEmpty_F" createVehiclelocal [getMarkerPos _spawn_loc select 0,getMarkerPos _spawn_loc select 1,round (2+random 7)];
+_poz_ini = [getPos _mark_orig select 0,getPos _mark_orig select 1,round (2+random 7)];
+
+_poz_ini = [getPos _mark_orig select 0,getPos _mark_orig select 1,round (2+random 7)];
+                //_obiect_orb = "testsphere1" createVehiclelocal [getPos _mark_orig select 0,getPos _mark_orig select 1,round (2+random 7)]; //aussie		
+_obiect_orb = "Sign_Sphere10cm_F" createVehiclelocal [getPos _mark_orig select 0,getPos _mark_orig select 1,round (2+random 7)];
 _obiect_orb setObjectMaterialGlobal [0, "\a3\data_f\default.rvmat"];
 //_obiect_orb setObjectTextureGlobal [0, "#(argb,8,8,3)color(1,1,0.1,0.5,ca)"];
 _obiect_orb setObjectTextureGlobal [0, "#(argb,8,8,3)color(1,1,1,0.5,ca)"];
@@ -133,7 +136,7 @@ if ((count _list_units_in_range>0) and ((player distance _obiect_orb)< 200)) the
 		{
 		nul=[_voice_orb,_voice_orb] execVM "AL_spark\al_spark_attack.sqf";
 		//[[_x],"AL_spark\al_spark_damage.sqf"] remoteExec ["execVM",2];
-	  //  {_x setVelocity [1+random 3,1+random 3,1+random 5]; _x setDammage ((getDammage _x) + 0.2)} foreach _list_units_in_range;   //comment this line is you don't want sparky to deal damage
+	    {_x setVelocity [1+random 3,1+random 3,1+random 5]; _x setDammage ((getDammage _x) + 0.2)} foreach _list_units_in_range;   //comment this line is you don't want sparky to deal damage
 		//_damage_ante = getDammage _x;	_x setDamage [_damage_ante+0.2, true];
 		};
 	} foreach _list_units_in_range;

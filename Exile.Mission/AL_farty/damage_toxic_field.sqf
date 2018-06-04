@@ -10,7 +10,7 @@ _toxic_dam	= _this select 2;
 
 _obj_sursa = "Land_HelipadEmpty_F" createVehicle (getMarkerPos _mark_sursa);
 _center_toxic = getPosATL _obj_sursa;
-_d_pre 		= getdammage player;
+_d_pre 		= damage player;
 
 waitUntil {!isNil {player getVariable "protejat_tox"}};
 
@@ -23,7 +23,7 @@ if((player distance _center_toxic) < _toxic_rad) then
 	if (player getVariable "protejat_tox") then {sleep (1.2 + random 1)}
 		else {
 			_d_pre=_d_pre+_toxic_dam;
-			player setdammage _d_pre;
+			player setDamage _d_pre;
 			_amplificat_effect = linearConversion [0, 1,(getdammage player), 2, 0.1, true];
 			if (_d_pre>0.05) then 
 			{
