@@ -163,4 +163,19 @@ Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-cre
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
 ![The Screamer](https://media.discordapp.net/attachments/288089861955518465/447777316731355146/20180520234416_2.jpg)
 ![Farty](https://media.discordapp.net/attachments/281649762934194187/448403282356862977/20180519231141_1.jpg)
-![Spectre](https://cdn.discordapp.com/attachments/281649762934194187/451072062606540811/20180529013425_1.jpg)
+![Spectre](https://cdn.discordapp.com/attachments/281649762934194187/451072062606540811/20180529013425_1.jpg)  
+
+**Updates 5.06.18**  
+
++ Configured an easy setup for each Anomaly in: @ExileServer\addons\a3_exile_occupation\config.sqf  
+
++ Added toast success hint at the end of each misison. Configure it here:  
+
+  @ExileServer\addons\a3_exile_occupation\scripts\deleteMapMarkers.sqf  
+
++ Anomalies wont depawn when the map marker deletes (except for Farty).   
+  I extended the player detection randge for Farty so you can't run in & delete the map marker (removing the Farty Slug).    
+
+
+![Spectre](https://cdn.discordapp.com/attachments/331697969231298562/453286560821936130/20180605040854_1.jpg)  
+
