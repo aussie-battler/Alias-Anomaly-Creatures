@@ -157,7 +157,7 @@ in occupationFarty.sqf & occupationScreamer.sqf
 ```
          obj_prot_sparky = "H_PilotHelmetFighter_B";  // I set it to the helmet worn by the mission ai.   
 ```	 
-Need HELP?   
+Need HELP??   
 Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-creatures-pack-by-alias/#comment-192572
 
 ![Sparky](https://media.discordapp.net/attachments/288089861955518465/447418006927179776/20180519203800_1.jpg)
