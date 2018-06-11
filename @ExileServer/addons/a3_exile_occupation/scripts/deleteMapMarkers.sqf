@@ -22,11 +22,11 @@ if (SC_occupyLootCratesMarkers) then
 	};						
 };
 
-if (SC_occupyLootCratesMarkers) then
+if (SC_occupyFartMarkers) then
 {
 	// Delete the map marker on a loot crate when a player gets in range
 
-	for "_i" from 1 to SC_numberofLootCrates do
+	for "_i" from 1 to SC_numberofFarts do
 	{
 		_markerName = format ["Toxic_%1", _i];
 		_pos = getMarkerPos _markerName;
@@ -46,11 +46,11 @@ if (SC_occupyLootCratesMarkers) then
 	};						
 };
 
-if (SC_occupyFartMarkers) then
+if (SC_occupySpectreMarkers) then
 {
 	// Delete the map marker on a loot crate when a player gets in range
 
-	for "_i" from 1 to SC_numberofFarts do
+	for "_i" from 1 to SC_numberofSpectres do
 	{
 		_markerName = format ["Spectre_%1", _i];
 		_pos = getMarkerPos _markerName;
