@@ -46,18 +46,18 @@ Exile mission file - <br />
 ```
 class CfgSounds
 {
-#include "sound\sound_farty\sound.ext"
-#include "sound\sound_screamer\sound.ext"
-#include "sound\sound_sparky\sound.ext"
-#include "sound\sound_strigoi\sound.ext"
+#include "sound\sound_farty\sound.hpp"
+#include "sound\sound_screamer\sound.hpp"
+#include "sound\sound_sparky\sound.hpp"
+#include "sound\sound_strigoi\sound.hpp"
 };
 ```
 If you already have a class CfgSounds just add these lines into it:   
 ```
-#include "sound\sound_farty\sound.ext"
-#include "sound\sound_screamer\sound.ext"
-#include "sound\sound_sparky\sound.ext"
-#include "sound\sound_strigoi\sound.ext"
+#include "sound\sound_farty\sound.hpp"
+#include "sound\sound_screamer\sound.hpp"
+#include "sound\sound_sparky\sound.hpp"
+#include "sound\sound_strigoi\sound.hpp"
 ```
 3. Repack your mission file & that bit is done.
 
