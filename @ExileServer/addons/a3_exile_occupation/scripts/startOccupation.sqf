@@ -27,6 +27,26 @@ if(SC_occupyLootCratesMarkers) then
 	[10, fnc_occupationDeleteMapMarker, [], true] call ExileServer_system_thread_addTask;	
 };
 
+if(SC_occupyScreamerMarkers) then
+{
+	uiSleep 15; // delay the start
+	fnc_occupationDeleteMapMarker 	= compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\deleteMapMarkers.sqf";
+	[10, fnc_occupationDeleteMapMarker, [], true] call ExileServer_system_thread_addTask;	
+};
+
+if(SC_occupySpectreMarkers) then
+{
+	uiSleep 15; // delay the start
+	fnc_occupationDeleteMapMarker 	= compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\deleteMapMarkers.sqf";
+	[10, fnc_occupationDeleteMapMarker, [], true] call ExileServer_system_thread_addTask;	
+};
+if(SC_occupyFartMarkers) then
+{
+	uiSleep 15; // delay the start
+	fnc_occupationDeleteMapMarker 	= compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\deleteMapMarkers.sqf";
+	[10, fnc_occupationDeleteMapMarker, [], true] call ExileServer_system_thread_addTask;	
+};
+
 if(SC_debug) then { SC_refreshTime = 60; }else{ SC_refreshTime = 300; };
 
 // Add selected occupation scripts to Exile Threading System
