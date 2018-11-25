@@ -124,14 +124,16 @@ SC_LootCrateItems           	= [
 				    ["H_PilotHelmetFighter_B",0,1],						  
 				    ["Exile_Item_MetalScrews",0,5]
                             ];        
-```			    
+			    
+```
 2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, occupationSpectre.sqf, startOccupation.sqf 
    into your @ExileServer\addons\a3_exile_occupation\scripts folder.
 
-3. Add 
-```#include "AL_flamer\functions_flame.hpp"
+3. Add thus to your mission file initServer.sqf:
 ```
-to your mission file initServer.sqf
+#include "AL_flamer\functions_flame.hpp"
+```
+
    
 **JOB DONE, sit back and have a beer.**
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
