@@ -45,7 +45,7 @@ for "_i" from 1 to SC_numberofScreamers do
 		_event_marker = createMarker [_mapMarkerName, _position];
 		_event_marker setMarkerColor "ColorGreen";
 		_event_marker setMarkerAlpha 1;
-		_event_marker setMarkerText "Screamer";
+		_event_marker setMarkerText "Screamer: bring grenades";
 		_event_marker setMarkerType "ExileContaminatedZoneIcon";
 	};	
 	
@@ -86,9 +86,9 @@ for "_i" from 1 to SC_numberofScreamers do
 					["Rangefinder","ItemGPS"],
 					"launch_O_Titan_short_ghex_F",
 					"H_PilotHelmetFighter_B", // helmet
-					"U_I_Protagonist_VR",  // uniform
-					"V_PlateCarrierIAGL_dgtl",  //vest
-					"B_Carryall_ghex_F" //backpack
+					"ADF_Base_UM",  // uniform
+					"ADF_PlateCarrierK_A1",  //vest
+					"ADF_KitbagAT_AC" //backpack
 				];
 					_unit = [_initialGroup,_spawnPosition,"custom","random","bandit","soldier",_customGearSet] call DMS_fnc_SpawnAISoldier; 
 					_unitName = ["bandit"] call SC_fnc_selectName;
@@ -105,7 +105,10 @@ for "_i" from 1 to SC_numberofScreamers do
 				_group setVariable ["DMS_LockLocality",nil];
 				_group setVariable ["DMS_SpawnedGroup",true];
 				_group setVariable ["DMS_Group_Side", SC_BanditSide];
-
+				_group setVariable ["VCM_TOUGHSQUAD",true];
+				_group setVariable ["VCM_NORESCUE",true];
+				_group setVariable ["Vcm_Disable",true];
+				
 				{	
 					_unit = _x;           
 					[_unit] joinSilent grpNull;
@@ -131,6 +134,10 @@ for "_i" from 1 to SC_numberofScreamers do
 					"random"
 				] call DMS_fnc_SpawnAIVehicle;		
 
+				_group setVariable ["VCM_TOUGHSQUAD",true];
+				_group setVariable ["VCM_NORESCUE",true];
+				_group setVariable ["Vcm_Disable",true];
+				
 				_logDetail = format ["[OCCUPATION:Screamer]::  Creating crate %3 at drop zone %1 with %2 guards",_position,_AICount,_i];
 				[_logDetail] call SC_fnc_log;		
 			};
@@ -212,7 +219,7 @@ _staticGuns =
 	"random"
 ] call DMS_fnc_SpawnAIStaticMG;
 
-
+					["toastRequest", ["InfoTitleAndText", ["A screamer is on a warpath!", "Better get some grenades or dig your grave."]]] call ExileServer_system_network_send_broadcast;			
 // mission objects
 		private _objects = [
 	["Land_AncientHead_01_F",[-0.447754,-12.2441,0],180,[true,false]],
@@ -221,11 +228,11 @@ _staticGuns =
 	["Land_AncientStatue_01_F",[0.0488281,15.7905,0],5.83839,[true,false]],
 	["Land_AncientStatue_02_F",[-6.80859,-12.3301,0],269.078,[true,false]],
 	["Land_AncientStatue_02_F",[7.09717,-13.1284,0],91.2094,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[12.9282,2.64453,0],0,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[-13.062,-0.0585938,0],0,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[-6.83789,-11.8901,0],0,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[0.144531,15.3569,0],0,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[6.91992,-13.3188,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[12.9282,2.64453,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[-13.062,-0.0585938,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[-6.83789,-11.8901,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[0.144531,15.3569,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[6.91992,-13.3188,0],0,[true,false]],
 	["GraveCross1",[-9.59521,10.9609,0],0,[true,false]],
 	["GraveCross1",[8.21924,11.3696,0],0,[true,false]]
 ];

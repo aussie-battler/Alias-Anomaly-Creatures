@@ -1,9 +1,9 @@
 // by ALIAS
 
-private ["_obiect_orb","_mark_orig","_spawn_loc"];
+private ["_list_units_in_range","_obiect_orb","_mark_orig","_spawn_loc"];
 
 _spawn_loc =_this select 0;
-obj_prot_sparky = "H_PilotHelmetFighter_B";
+//obj_prot_sparky = ["H_CrewHelmetHeli_I","CUP_H_SLA_Pilot_Helmet","CUP_H_TK_PilotHelmet","CUP_H_USMC_Helmet_Pilot","H_PilotHelmetHeli_B","H_PilotHelmetHeli_I","H_PilotHelmetFighter_B","H_PilotHelmetFighter_I","H_PilotHelmetFighter_O"];
 
 if (!hasInterface) exitWith {};
 
@@ -81,7 +81,7 @@ _orb_lit setLightDayLight true;
 	_poz_dest_1 = _poz_dest_2;
 	sleep 1 + random 3;
 	};
-	waitUntil {(player distance _obiect_plut) < 200};
+	waitUntil {(player distance _obiect_plut) < 350};
 	};
 };
 
@@ -95,7 +95,7 @@ _y_dest=0;
 _poz_x_1 = _poz_x_ini;
 _poz_y_1 = _poz_y_ini;
 
-while {(player distance _ob_slide) < 200} do 
+while {(player distance _ob_slide) < 350} do 
 {
 	_fct_hor = [1,-1]call BIS_fnc_selectRandom;
 	_poz_x_2 = _poz_x_ini+ (round (3+random 10))*_fct_hor;
@@ -118,15 +118,17 @@ while {(player distance _ob_slide) < 200} do
 	sleep 1 + random 3;
 	_ob_slide say3D [_sunet_spark, 300];
 
-waitUntil {(player distance _ob_slide) < 200};
+waitUntil {(player distance _ob_slide) < 350};
 };
 };
 
 sleep 10;
 
+
 while {alive _obiect_orb} do 
 {
-_list_units_in_range = (position _obiect_orb) nearEntities ['Exile_Unit_Player',15];
+//_list_units_in_range = (position _obiect_orb) nearEntities ['Exile_Unit_Player',15];
+_list_units_in_range = (position _obiect_orb) nearEntities [['Exile_Unit_Player'], 15];
 if ((count _list_units_in_range>0) and ((player distance _obiect_orb)< 200)) then 
 {
 	{

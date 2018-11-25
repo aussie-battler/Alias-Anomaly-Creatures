@@ -46,9 +46,30 @@ if(SC_occupyFartMarkers) then
 	fnc_occupationDeleteMapMarker 	= compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\deleteMapMarkers.sqf";
 	[10, fnc_occupationDeleteMapMarker, [], true] call ExileServer_system_thread_addTask;	
 };
-
+if(SC_occupyFlamerMarkers) then
+{
+	uiSleep 15; // delay the start
+	fnc_occupationDeleteMapMarker 	= compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\deleteMapMarkers.sqf";
+	[10, fnc_occupationDeleteMapMarker, [], true] call ExileServer_system_thread_addTask;	
+};
 if(SC_debug) then { SC_refreshTime = 60; }else{ SC_refreshTime = 300; };
 
+	uiSleep 15; // delay the start	
+_script = [1,4] call BIS_fnc_randomInt;  
+
+switch (_script) do
+{
+  case 1 : { [] execVM "\x\addons\a3_exile_occupation\scripts\occupationScreamer.sqf"; };
+  case 2 : { [] execVM "\x\addons\a3_exile_occupation\scripts\occupationSpectre.sqf"; };
+  case 3 : { [] execVM "\x\addons\a3_exile_occupation\scripts\occupationFarty.sqf"; };
+  case 4 : { [] execVM "\x\addons\a3_exile_occupation\scripts\occupationFlamer.sqf"; };
+};
+  /*
+if(SC_Flamer) then
+{
+	uiSleep 15; // delay the start
+	call compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\occupationFlamer.sqf";
+};
 // Add selected occupation scripts to Exile Threading System
 if(SC_Spectre) then
 {
@@ -67,6 +88,7 @@ if(SC_Screamer) then
 	uiSleep 15; // delay the start
 	call compile preprocessFileLineNumbers "\x\addons\a3_exile_occupation\scripts\occupationScreamer.sqf";
 };
+ */ 
 // Add selected occupation scripts to Exile Threading System
 if (SC_fastNights) then
 {

@@ -45,7 +45,7 @@ for "_i" from 1 to SC_numberofSpectres do
 		_event_marker = createMarker [_mapMarkerName, _position];
 		_event_marker setMarkerColor "ColorBlack";
 		_event_marker setMarkerAlpha 1;
-		_event_marker setMarkerText "Spectre";
+		_event_marker setMarkerText "Spectre: bring grenades";
 		_event_marker setMarkerType "KIA";
 	};	
 
@@ -105,7 +105,10 @@ for "_i" from 1 to SC_numberofSpectres do
 				_group setVariable ["DMS_LockLocality",nil];
 				_group setVariable ["DMS_SpawnedGroup",true];
 				_group setVariable ["DMS_Group_Side", SC_BanditSide];
-
+				_group setVariable ["VCM_TOUGHSQUAD",true];
+				_group setVariable ["VCM_NORESCUE",true];
+				_group setVariable ["Vcm_Disable",true];
+				
 				{	
 					_unit = _x;           
 					[_unit] joinSilent grpNull;
@@ -114,10 +117,25 @@ for "_i" from 1 to SC_numberofSpectres do
 				}foreach units _initialGroup;  		
 				deleteGroup _initialGroup;
 				
+									// add vehicle patrol and randomise a little - same for all levels (as it uses variable)
+				_veh =
+				[
+					[
+						[(_position select 0) -(35-(random 5)),(_position select 1) +(35+(random 5)),0]
+					],
+					_group,
+					"assault",
+					"hardcore",
+					"bandit",
+					"random"
+				] call DMS_fnc_SpawnAIVehicle;		
+				
 				[_group, _spawnPosition, 25] call bis_fnc_taskPatrol;
 				_group setBehaviour "STEALTH";
 				_group setCombatMode "RED";
-				
+				_group setVariable ["VCM_TOUGHSQUAD",true];
+				_group setVariable ["VCM_NORESCUE",true];
+				_group setVariable ["Vcm_Disable",true];				
 
 
 				_logDetail = format ["[OCCUPATION:Spectre]::  Creating crate %3 at drop zone %1 with %2 guards",_position,_AICount,_i];
@@ -177,7 +195,7 @@ for "_i" from 1 to SC_numberofSpectres do
 	_wreckFire attachto [_box, [0,0,-1]];
 	
 
-
+					["toastRequest", ["InfoTitleAndText", ["The Spectre is back!", "Better get some grenades and strap on your brown pants."]]] call ExileServer_system_network_send_broadcast;			
 
 // mission objects
 		private _objects = [
@@ -209,11 +227,11 @@ for "_i" from 1 to SC_numberofSpectres do
 	["Land_BagFence_Long_F",[-11.1362,-2.86011,0],75,[true,false]],
 	["Land_BagFence_Short_F",[0.532227,-1.10156,0],255,[true,false]],
 	["Land_BagFence_End_F",[2.10449,-7.57983,0],255,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[2.04004,6.35327,0],0,[true,false]],  //add in weed here if you have CUP
-	//["CUP_A2_p_fiberplant_ep1",[-3.78223,6.47998,0],0,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[-23.5723,-4.33057,0],0,[true,false]],
-	//["CUP_A2_p_fiberplant_ep1",[-8.29297,-2.49756,0],0,[true,false]],
-	["Land_TTowerSmall_1_F",[0.916504,-0.628174,-4.76837e-007],345,[true,false]]
+	["Land_TTowerSmall_1_F",[0.916504,-0.628174,-4.76837e-007],345,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[2.04004,6.35327,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[-3.78223,6.47998,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[-23.5723,-4.33057,0],0,[true,false]],
+	["CUP_A2_p_fiberplant_ep1",[-8.29297,-2.49756,0],0,[true,false]]
 ];
 
 private _center = [_position select 0, _position select 1, 0];
