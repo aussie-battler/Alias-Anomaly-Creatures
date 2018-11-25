@@ -179,3 +179,18 @@ Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-cre
 
 ![Spectre](https://cdn.discordapp.com/attachments/331697969231298562/453286560821936130/20180605040854_1.jpg)  
 
+**Updates 26.11.18**  
+
++ Randomly spawn one of the Anomaly missons on each server restart found in: 
+  @ExileServer\addons\a3_exile_occupation\startOccupation.sqf  
+
++ Added toast messages at the start of each misison. Configure it here:  
+
+  @ExileServer\addons\a3_exile_occupation\scripts
+  occupationFarty.sqf, occupationFlamer.sqf, occupationScreamer.sqf, occupationSpectre.sqf.
+
++ Changed the sparky code to deal damage if you dont wear the protective helmet.
+
++ Added the Flamer mission.
+
+![Spectre](https://cdn.discordapp.com/attachments/382927612210708494/516205352002387968/20181125212055_1.jpg)  
