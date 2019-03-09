@@ -195,7 +195,7 @@ null = [_mapMarkerName,200,0.1,400] execVM "AL_Flamer\al_flamer.sqf";
 		{
 			_box addBackpackCargoGlobal [_item, _amount];	
 		};			
-	}forEach SC_LootCrateItems;	
+	}forEach SC_FlamerItems;	
 	
 	
 	_effect = "test_EmptyObjectForSmoke";	

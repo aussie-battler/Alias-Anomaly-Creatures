@@ -187,7 +187,7 @@ for "_i" from 1 to SC_numberofSpectres do
 		{
 			_box addBackpackCargoGlobal [_item, _amount];	
 		};			
-	}forEach SC_LootCrateItems;	
+	}forEach SC_numberofSpectre;	
 	
 	
 	_effect = "test_EmptyObjectForSmoke";	
