@@ -28,6 +28,9 @@ https://goo.gl/Pw6KuQ
 **STRIGOI** a spectre that runs at lightening speeds with the abilty to jump into tree tops for cover. 
 https://goo.gl/cEZcp6
 
+**Flamer** a fire demon that shoots fire balls and sets the ground of it's enemies on fire. 
+https://goo.gl/ZKM1CH
+
 The soldiers guarding the mission include up to 4 guards, two static guns and an armed vehicle. The loot in the crate includes a variety of Exile items plus $500 to $20000 poptabs.
 
 **Requirements**
@@ -50,6 +53,7 @@ class CfgSounds
 #include "sound\sound_screamer\sound.hpp"
 #include "sound\sound_sparky\sound.hpp"
 #include "sound\sound_strigoi\sound.hpp"
+#include "sound\sound_flamer\sound.hpp"
 };
 ```
 If you already have a class CfgSounds just add these lines into it:   
@@ -58,6 +62,7 @@ If you already have a class CfgSounds just add these lines into it:
 #include "sound\sound_screamer\sound.hpp"
 #include "sound\sound_sparky\sound.hpp"
 #include "sound\sound_strigoi\sound.hpp"
+#include "sound\sound_flamer\sound.hpp"
 ```
 3. Repack your mission file & that bit is done.
 
@@ -119,9 +124,16 @@ SC_LootCrateItems           	= [
 				    ["H_PilotHelmetFighter_B",0,1],						  
 				    ["Exile_Item_MetalScrews",0,5]
                             ];        
-```			    
+			    
+```
 2. Drop the files deleteMapMarkers.sqf, occupationFarty.sqf, occupationScreamer.sqf, occupationSpectre.sqf, startOccupation.sqf 
    into your @ExileServer\addons\a3_exile_occupation\scripts folder.
+
+3. Add thus to your mission file initServer.sqf:
+```
+#include "AL_flamer\functions_flame.hpp"
+```
+
    
 **JOB DONE, sit back and have a beer.**
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -178,4 +190,21 @@ Head to the forums here: http://www.exilemod.com/topic/26451-release-anomaly-cre
 
 
 ![Spectre](https://cdn.discordapp.com/attachments/331697969231298562/453286560821936130/20180605040854_1.jpg)  
+
+**Updates 26.11.18**  
+
++ Randomly spawn one of the Anomaly missons on each server restart found in: 
+  @ExileServer\addons\a3_exile_occupation\startOccupation.sqf  
+
++ Added toast messages at the start of each misison. Configure it here:  
+
+  @ExileServer\addons\a3_exile_occupation\scripts
+  occupationFarty.sqf, occupationFlamer.sqf, occupationScreamer.sqf, occupationSpectre.sqf.
+
++ Changed the sparky code to deal damage if you dont wear the protective helmet.
+
++ Added the Flamer mission.
+
+![Flamer](https://cdn.discordapp.com/attachments/382927612210708494/516205352002387968/20181125212055_1.jpg)  
+![Flamer](https://goo.gl/tCFH7z)  
 
