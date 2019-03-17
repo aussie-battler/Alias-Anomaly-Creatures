@@ -195,7 +195,7 @@ for "_i" from 1 to SC_numberofScreamers do
 		{
 			_box addBackpackCargoGlobal [_item, _amount];	
 		};			
-	}forEach SC_numberofScreamer;	
+	}forEach SC_ScreamerItems;	
 	
 	
 	_effect = "test_EmptyObjectForSmoke";	

@@ -191,7 +191,7 @@ for "_i" from 1 to SC_numberofFarts do
 		{
 			_box addBackpackCargoGlobal [_item, _amount];	
 		};			
-	}forEach SC_numberofFarts;	
+	}forEach SC_LootFartItems;	
 	
 					["toastRequest", ["InfoTitleAndText", ["A Slimy Fart is in the swamp!", "Better get some grenades or prepare to be destroyed."]]] call ExileServer_system_network_send_broadcast;			
 					
