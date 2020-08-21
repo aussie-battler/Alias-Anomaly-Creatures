@@ -10,12 +10,6 @@
 		sound[] = {"\sound\sound_screamer\scream.ogg", db+20, 1};
 		titles[] = {};
 	};
-	class ecou
-	{
-		name = "ecou";
-		sound[] = {"\sound\sound_screamer\ecou.ogg", db+20, 1};
-		titles[] = {};
-	};		
 	class stones_scream
 	{
 		name = "stones_scream";
