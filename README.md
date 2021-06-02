@@ -25,7 +25,7 @@ https://goo.gl/zmJrnL
 **The Screamer** is an ancient statue that screams sonic waves at it's enemies. 
 https://goo.gl/Pw6KuQ
 
-**STRIGOI** a spectre that runs at lightening speeds with the abilty to jump into tree tops for cover. 
+**STRIGOI** a spectre that runs at lightening speeds with the ability to jump into tree tops for cover. 
 https://goo.gl/cEZcp6
 
 **Flamer** a fire demon that shoots fire balls and sets the ground of it's enemies on fire. 
